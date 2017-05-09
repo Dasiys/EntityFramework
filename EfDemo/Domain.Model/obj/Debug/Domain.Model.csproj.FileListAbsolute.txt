@@ -1,0 +1,5 @@
+F:\project\EfDemo\EfDemo\Domain.Model\bin\Debug\Domain.Model.dll
+F:\project\EfDemo\EfDemo\Domain.Model\bin\Debug\Domain.Model.pdb
+F:\project\EfDemo\EfDemo\Domain.Model\obj\Debug\Domain.Model.csprojResolveAssemblyReference.cache
+F:\project\EfDemo\EfDemo\Domain.Model\obj\Debug\Domain.Model.dll
+F:\project\EfDemo\EfDemo\Domain.Model\obj\Debug\Domain.Model.pdb
