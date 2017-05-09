@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GradeMap.cs" />
+    <Compile Include="GradeService.cs" />
     <Compile Include="Migrations\201705090718259_AddDatabase.cs" />
     <Compile Include="Migrations\201705090718259_AddDatabase.Designer.cs">
       <DependentUpon>201705090718259_AddDatabase.cs</DependentUpon>
@@ -56,8 +57,10 @@
     <Compile Include="StudentDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentMap.cs" />
+    <Compile Include="StudentService.cs" />
     <Compile Include="StudentSubjectMapMap.cs" />
     <Compile Include="SubjectMap.cs" />
+    <Compile Include="SubjectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
