@@ -8,11 +8,16 @@ using Domain.Model;
 
 namespace Infastrcuture
 {
-    public class StudentMap:EntityTypeConfiguration<Student>
+    public class StudentMap : EntityTypeConfiguration<Student>
     {
         public StudentMap()
         {
             HasKey(m => m.Id);
+            HasMany(m => m.Subjects)
+                .WithMany(n => n.Students)
+                .Map(
+                    relationMap =>
+                        relationMap.MapLeftKey("StundetId").MapRightKey("SubjectId").ToTable("StudentSubjectMap"));
         }
     }
 }

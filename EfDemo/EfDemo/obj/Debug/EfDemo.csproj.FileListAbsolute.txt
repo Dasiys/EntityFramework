@@ -29,6 +29,10 @@ F:\project\EfDemo\EfDemo\EfDemo\bin\EfDemo.dll.config
 F:\project\EfDemo\EfDemo\EfDemo\bin\EfDemo.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\EfDemo.pdb
 F:\project\EfDemo\EfDemo\EfDemo\bin\Antlr3.Runtime.dll
+F:\project\EfDemo\EfDemo\EfDemo\bin\Domain.Model.dll
+F:\project\EfDemo\EfDemo\EfDemo\bin\EntityFramework.dll
+F:\project\EfDemo\EfDemo\EfDemo\bin\EntityFramework.SqlServer.dll
+F:\project\EfDemo\EfDemo\EfDemo\bin\Infastrcuture.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\Microsoft.AI.Agent.Intercept.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\Microsoft.AI.DependencyCollector.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -47,6 +51,11 @@ F:\project\EfDemo\EfDemo\EfDemo\bin\System.Web.WebPages.Deployment.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\System.Web.WebPages.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\System.Web.WebPages.Razor.dll
 F:\project\EfDemo\EfDemo\EfDemo\bin\WebGrease.dll
+F:\project\EfDemo\EfDemo\EfDemo\bin\Domain.Model.pdb
+F:\project\EfDemo\EfDemo\EfDemo\bin\Infastrcuture.pdb
+F:\project\EfDemo\EfDemo\EfDemo\bin\Infastrcuture.dll.config
+F:\project\EfDemo\EfDemo\EfDemo\bin\EntityFramework.xml
+F:\project\EfDemo\EfDemo\EfDemo\bin\EntityFramework.SqlServer.xml
 F:\project\EfDemo\EfDemo\EfDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\project\EfDemo\EfDemo\EfDemo\bin\System.Web.Helpers.xml
 F:\project\EfDemo\EfDemo\EfDemo\bin\System.Web.Mvc.xml

@@ -23,7 +23,7 @@ namespace Infastrcuture
         /// <returns></returns>
         public IQueryable<Subject> All()
         {
-            return _studentDbContext.Set<Subject>().AsNoTracking();
+            return _studentDbContext.Set<Subject>();
         }
 
         /// <summary>
@@ -34,6 +34,7 @@ namespace Infastrcuture
         {
             _studentDbContext.Set<Subject>().Attach(entity);
             _studentDbContext.Entry(entity).State=EntityState.Added;
+            _studentDbContext.SaveChanges();
         }
     }
 }

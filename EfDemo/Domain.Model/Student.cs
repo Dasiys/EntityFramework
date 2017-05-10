@@ -27,6 +27,6 @@ namespace Domain.Model
         /// <summary>
         /// 设置或获取成绩
         /// </summary>
-        public virtual ICollection<StudentSubjectMap> Subjects { set; get; }
+        public virtual ICollection<Subject> Subjects { set; get; }
     }
 }

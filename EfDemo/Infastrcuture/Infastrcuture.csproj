@@ -49,16 +49,15 @@
   <ItemGroup>
     <Compile Include="GradeMap.cs" />
     <Compile Include="GradeService.cs" />
-    <Compile Include="Migrations\201705090718259_AddDatabase.cs" />
-    <Compile Include="Migrations\201705090718259_AddDatabase.Designer.cs">
-      <DependentUpon>201705090718259_AddDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201705100759101_InitialCreates.cs" />
+    <Compile Include="Migrations\201705100759101_InitialCreates.Designer.cs">
+      <DependentUpon>201705100759101_InitialCreates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentMap.cs" />
     <Compile Include="StudentService.cs" />
-    <Compile Include="StudentSubjectMapMap.cs" />
     <Compile Include="SubjectMap.cs" />
     <Compile Include="SubjectService.cs" />
   </ItemGroup>
@@ -73,8 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705090718259_AddDatabase.resx">
-      <DependentUpon>201705090718259_AddDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705100759101_InitialCreates.resx">
+      <DependentUpon>201705100759101_InitialCreates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

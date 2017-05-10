@@ -1,0 +1,28 @@
+﻿@using Domain.Model
+@model Student
+@{
+    ViewBag.Title = "Edit";
+}
+@{
+    List<Subject> subjects = ViewBag.Subject;
+}
+<h2>编辑</h2>
+@Html.LabelFor(m => m.Name, "姓名：")
+@Html.DisplayFor(m => m.Name)
+<hr />
+@Html.LabelFor(m => m.No, "学号：")
+@Html.DisplayFor(m => m.No)
+<hr />
+@Html.LabelFor(m => m.FlowerNum, "小红花数量：")
+@Html.DisplayFor(m => m.FlowerNum)
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m=>m.Id)
+    foreach (var subject in subjects)
+    {
+        string isChecked = Model.Subjects.Any(m => m.Id == subject.Id) ? "checked" : "";
+        <input type="checkbox" @isChecked value="@subject.Id" name="subjectId" />
+        <span>@subject.Name</span>
+    }
+    <button type="submit">提交</button>
+}

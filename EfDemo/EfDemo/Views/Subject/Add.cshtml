@@ -1,0 +1,20 @@
+﻿@using Domain.Model
+@model Subject
+@{
+    ViewBag.Title = "课程添加";
+}
+
+<h2>课程添加</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m=>m.Id)
+    @Html.LabelFor(m=>m.No,"课程编号：")
+    @Html.EditorFor(m=>m.No)
+    <br/>
+
+    @Html.LabelFor(m=>m.Name,"课程名称：")
+    @Html.EditorFor(m=>m.Name)
+    <br/>
+    <button type="submit">提交</button>
+}

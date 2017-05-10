@@ -19,7 +19,6 @@ namespace Infastrcuture
             System.Data.Entity.Database.SetInitializer<StudentDbContext>(null);
         }
 
-        public DbSet<StudentSubjectMap> StudentSubjectMap { set; get; }
         public DbSet<Grade> Grade { set; get; }
         public DbSet<Subject> Subject { set; get; }
         public  DbSet<Student> Student { set; get; }

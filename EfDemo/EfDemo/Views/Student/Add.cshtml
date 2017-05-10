@@ -4,7 +4,18 @@
 }
 
 <h2>学生</h2>
-@Html.LabelFor(m=>m.FlowerNum,"花朵数目")
-@Html.EditorFor(m=>m.FlowerNum);
-<br/>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.FlowerNum, "小红花数目：")
+    @Html.EditorFor(m => m.FlowerNum)
+    <hr/>
+    @Html.LabelFor(m => m.Name, "姓名：")
+    @Html.EditorFor(m => m.Name)
 
+    @Html.HiddenFor(m => m.Id)
+    <hr/>
+    @Html.LabelFor(m => m.No, "学号：")
+    @Html.EditorFor(m => m.No)
+    <hr/>
+    <button type="submit">添加</button>
+}

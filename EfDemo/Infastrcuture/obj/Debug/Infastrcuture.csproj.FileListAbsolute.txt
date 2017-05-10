@@ -1,14 +1,14 @@
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Infastrcuture.dll.config
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Infastrcuture.dll
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Infastrcuture.pdb
+F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Domain.Model.dll
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\EntityFramework.dll
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\EntityFramework.SqlServer.dll
+F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Domain.Model.pdb
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\EntityFramework.xml
 F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\EntityFramework.SqlServer.xml
 F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.csprojResolveAssemblyReference.cache
 F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.dll
 F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.pdb
-F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Domain.Model.dll
-F:\project\EfDemo\EfDemo\Infastrcuture\bin\Debug\Domain.Model.pdb
-F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.Migrations.AddDatabase.resources
+F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.Migrations.InitialCreates.resources
 F:\project\EfDemo\EfDemo\Infastrcuture\obj\Debug\Infastrcuture.csproj.GenerateResource.Cache
