@@ -40,6 +40,19 @@ namespace Infastrcuture
             _studentDbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// 获得分页后的数据
+        /// </summary>
+        /// <param name="pagesize"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public IQueryable<Student> GetPage(int pagesize, Expression<Func<Student, Type>> orderBy,
+            Expression<Func<Student, bool>> param)
+        {
+            return this.Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
+        }
+
         public void EditStudentSubject(int studentId, List<string> subjectId)
         {
             var students = _studentDbContext.Set<Student>();
