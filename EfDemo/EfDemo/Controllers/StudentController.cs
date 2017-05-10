@@ -16,8 +16,26 @@ namespace EfDemo.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            var student = _studentService.GetStudent().ToList();
+            ViewBag.Subject = GetSubjects();
+            return View(student);
+        }
+        [HttpPost]
+        public ActionResult Index(string subjectId)
+        {
+            var id = Convert.ToInt32(subjectId);
+            var student = _studentService.Fetch(m => m.Subjects.Any(n => n.Id ==id)).ToList();
+            ViewBag.Subject = GetSubjects();
+            return View(student);
+        }
 
-            return View();
+        private IList<SelectListItem> GetSubjects()
+        {
+            return _subjectService.All().Select(_ => new SelectListItem()
+            {
+                Text = _.Name,
+                Value = _.Id.ToString()
+            }).ToList();
         }
 
         public ActionResult Add()

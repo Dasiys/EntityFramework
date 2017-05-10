@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Model;
@@ -18,6 +19,10 @@ namespace Infastrcuture
             _subjectService = new SubjectService(_studentDbContext);
         }
 
+        public IQueryable<Student> Fetch(Expression<Func<Student, bool>> param)
+        {
+            return GetStudent().Where(param);
+        }
 
         /// <summary>
         /// 设置或获取学生
@@ -26,7 +31,6 @@ namespace Infastrcuture
         public IQueryable<Student> GetStudent()
         {
             return _studentDbContext.Set<Student>().Include(m=>m.Subjects).AsNoTracking();
-            //return _studentDbContext.Set<Student>().AsNoTracking();
         }
 
         public void EditStudent(Student entity)

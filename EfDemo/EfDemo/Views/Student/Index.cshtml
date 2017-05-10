@@ -1,7 +1,64 @@
-﻿@model dynamic
+﻿@model IEnumerable<Domain.Model.Student>  
 
 @{
     ViewBag.Title = "title";
 }
+<div>
+    <h4>查询条件</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownList("subjectId", (IEnumerable<SelectListItem>) ViewBag.Subject)
+        <button type="submit" id="search">查询</button>
+    }
+</div>
+<h3>学生信息</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>小红花数量</th>
+            <th>所选课程</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.No</td>
+                    <td>@student.Name</td>
+                    <td>@student.FlowerNum</td>
+                    <td>
+                        @string.Join(",", student.Subjects?.Select(m => m.Name))
+                    </td>
+                    <td>@Html.ActionLink("编辑", "Edit", "Student", new { studentId = student.Id }, new { })</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">还未录入任何学生</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<span>第<input style="width: 30px;" id="pageSize"/>页</span>
+<button type="button">跳转</button>
+<hr/>
+@Html.ActionLink("添加学生", "Add", "Student")
+@section scripts
+{
+    @*<script type="text/javascript">
+        $(function() {
+            $("#search").click(function() {
+                $.post("/Student/Index", { subjectId: $("select[name = 'subject']").val() }, function() {});
+            });
+        })
+    </script>*@
 
-<h2>title</h2>
+}

@@ -1,4 +1,5 @@
-﻿@using Domain.Model
+﻿@using System.Diagnostics
+@using Domain.Model
 @{
     ViewBag.Title = "Home Page";
 }
@@ -15,6 +16,7 @@
         <th>学号</th>
         <th>姓名</th>
         <th>小红花数量</th>
+        <th>所选课程</th>
         <th>操作</th>
     </tr>
     </thead>
@@ -27,6 +29,8 @@
                 <td>@student.No</td>
                 <td>@student.Name</td>
                 <td>@student.FlowerNum</td>
+                <td>
+                    @string.Join(",", student.Subjects?.Select(m => m.Name)) </td>
                 <td>@Html.ActionLink("编辑","Edit","Student",new { studentId = student.Id }, new {  })</td>
             </tr>
         }
@@ -41,7 +45,7 @@
 </table>
 <br />
 @Html.ActionLink("添加学生","Add","Student")
-<hr/>
+
 <h3>课程信息</h3>
 <table class="table table-striped">
     <thead>
