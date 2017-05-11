@@ -62,9 +62,6 @@ namespace Infastrcuture
             if (entity != null)
             {
                 students.Attach(entity);
-                var entry = _studentDbContext.Entry(entity);
-                entry.Property(m => m.FlowerNum).IsModified = true;
-
                 entity.Subjects.Clear();
                 if (subjectId?.Any()==true)
                     entity.Subjects = _subjectService.All().Where(m => subjectId.Contains(m.Id.ToString())).ToList();
