@@ -47,7 +47,7 @@ namespace Infastrcuture
         /// <param name="orderBy"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public IQueryable<Student> GetPage<TKey>(int pagesize, Expression<Func<Student,TKey>> orderBy,
+        public IQueryable<Student> GetPage<TKey>(int pagesize, Expression<Func<Student, TKey>> orderBy,
             Expression<Func<Student, bool>> param)
         {
             return Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
@@ -66,7 +66,8 @@ namespace Infastrcuture
                 entry.Property(m => m.FlowerNum).IsModified = true;
 
                 entity.Subjects.Clear();
-                entity.Subjects = _subjectService.All().Where(m => subjectId.Contains(m.Id.ToString())).ToList();
+                if (subjectId?.Any()==true)
+                    entity.Subjects = _subjectService.All().Where(m => subjectId.Contains(m.Id.ToString())).ToList();
                 _studentDbContext.SaveChanges();
             }
         }
