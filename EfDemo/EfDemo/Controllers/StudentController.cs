@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace EfDemo.Controllers
 {
@@ -21,21 +23,27 @@ namespace EfDemo.Controllers
             return View(student);
         }
         [HttpPost]
-        public ActionResult Index(string subjectId)
+        public string Index(string subjectId,string pageSize)
         {
             var id = Convert.ToInt32(subjectId);
-            var student = _studentService.Fetch(m => m.Subjects.Any(n => n.Id ==id)).ToList();
-            ViewBag.Subject = GetSubjects();
-            return View(student);
+            var result = _studentService.GetPage(Convert.ToInt32(pageSize), m => m.Id,
+                m => m.Subjects.Any(n => id == 0 || n.Id == id)).ToList();
+            return JsonConvert.SerializeObject(result);
         }
 
         private IList<SelectListItem> GetSubjects()
         {
-            return _subjectService.All().Select(_ => new SelectListItem()
+            var subjects= _subjectService.All().Select(_ => new SelectListItem()
             {
                 Text = _.Name,
                 Value = _.Id.ToString()
             }).ToList();
+            subjects.Insert(0,new SelectListItem()
+            {
+                 Text = "全部",
+                 Value = "0"
+            });
+            return subjects;
         }
 
         public ActionResult Add()
@@ -62,7 +70,7 @@ namespace EfDemo.Controllers
         public ActionResult Edit(int Id, List<string> subjectId )
         {
             _studentService.EditStudentSubject(Id,subjectId);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Student");
         }
     }
 }

@@ -12,7 +12,10 @@ namespace Infastrcuture
 {
     public class StudentDbContext:DbContext
     {
-        public StudentDbContext():base("StudentDb"){}
+        public StudentDbContext() : base("StudentDb")
+        {
+            Configuration.ProxyCreationEnabled = false;
+        }
 
         static StudentDbContext()
         {

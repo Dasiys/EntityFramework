@@ -23,10 +23,10 @@ namespace Domain.Model
         /// <summary>
         /// 设置或获取成绩
         /// </summary>
-        public virtual ICollection<Grade> Grades { set; get; }
+        public virtual ICollection<Grade> Grades { set; get; }=new List<Grade>();
         /// <summary>
         /// 设置或获取成绩
         /// </summary>
-        public virtual ICollection<Subject> Subjects { set; get; }
+        public virtual ICollection<Subject> Subjects { set; get; }=new List<Subject>();
     }
 }

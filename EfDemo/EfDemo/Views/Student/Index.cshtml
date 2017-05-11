@@ -1,15 +1,12 @@
-﻿@model IEnumerable<Domain.Model.Student>  
+﻿@model IEnumerable<Domain.Model.Student>
 
 @{
     ViewBag.Title = "title";
 }
 <div>
     <h4>查询条件</h4>
-    @using (Html.BeginForm())
-    {
-        @Html.DropDownList("subjectId", (IEnumerable<SelectListItem>) ViewBag.Subject)
-        <button type="submit" id="search">查询</button>
-    }
+    @Html.DropDownList("subjectId", (IEnumerable<SelectListItem>)ViewBag.Subject)
+    <button id="search">查询</button>
 </div>
 <h3>学生信息</h3>
 <table class="table table-striped">
@@ -41,24 +38,58 @@
         else
         {
             <tr>
-                <td colspan="3">还未录入任何学生</td>
+                <td colspan="5">还未录入任何学生</td>
             </tr>
         }
     </tbody>
 </table>
 <br />
-<span>第<input style="width: 30px;" id="pageSize"/>页</span>
-<button type="button">跳转</button>
-<hr/>
+<span>第<input style="width: 30px;" id="pageSize" />页</span>
+<button type="button" id="skipBtn">跳转</button>
+<hr />
 @Html.ActionLink("添加学生", "Add", "Student")
 @section scripts
 {
-    @*<script type="text/javascript">
-        $(function() {
-            $("#search").click(function() {
-                $.post("/Student/Index", { subjectId: $("select[name = 'subject']").val() }, function() {});
+    <script type="text/javascript">
+        $(function () {
+            $("#search").click(function () {
+                var pageSize = $("#pageSize").val() === '' ? 1 : $("#pageSize").val();
+                $.post("/Student/Index",
+                    {
+                        subjectId: $("select[name = 'subjectId']").val(), pageSize: pageSize
+                    }, function (result) {
+                        var htmlStr = "";
+                        var data = eval(result);
+                        if (data.length > 0) {
+                            $.each(data,
+                                function (index, value) {
+                                    console.log(value);
+                                    var name = "";
+                                    $.each(value.Subjects,
+                                        function (i, v) {
+                                            name += v.Name + ",";
+                                        });
+                                    name = name.substr(0, name.length - 1);
+                                    htmlStr += "<tr>" +
+                                        "<td>" + value.No + "</td>" +
+                                        "<td>" + value.Name + "</td>" +
+                                        "<td>" + value.FlowerNum + "</td>" +
+                                        "<td>" + name + "</td>" +
+                                        "<td><a href='/Student/Edit?studentId=" + value.Id + "'>编辑</a></td>" +
+                                        "</tr>";
+                                });
+                        } else {
+                            htmlStr += "<tr><td colspan='5'>还未录入任何学生</td></tr>";
+                        }
+                        console.log(htmlStr);
+                        $("tbody").children().remove();
+                        $("tbody").append(htmlStr);
+                    });
+            });
+            $("#skipBtn").click(function() {
+                $("#search").trigger("click");
             });
         })
-    </script>*@
+    </script>
 
 }

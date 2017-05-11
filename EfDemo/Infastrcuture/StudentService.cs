@@ -30,7 +30,7 @@ namespace Infastrcuture
         /// <returns></returns>
         public IQueryable<Student> GetStudent()
         {
-            return _studentDbContext.Set<Student>().Include(m=>m.Subjects).AsNoTracking();
+            return _studentDbContext.Set<Student>().Include(m => m.Subjects).AsNoTracking();
         }
 
         public void EditStudent(Student entity)
@@ -47,7 +47,7 @@ namespace Infastrcuture
         /// <param name="orderBy"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public IQueryable<Student> GetPage(int pagesize, Expression<Func<Student, Type>> orderBy,
+        public IQueryable<Student> GetPage(int pagesize, Expression<Func<Student, int>> orderBy,
             Expression<Func<Student, bool>> param)
         {
             return this.Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
@@ -55,6 +55,8 @@ namespace Infastrcuture
 
         public void EditStudentSubject(int studentId, List<string> subjectId)
         {
+            // 这里必须开启代理，不然无法监测到导航属性的变化
+            _studentDbContext.Configuration.ProxyCreationEnabled = true;
             var students = _studentDbContext.Set<Student>();
             var entity = students.FirstOrDefault(m => m.Id == studentId);
             if (entity != null)
@@ -62,6 +64,7 @@ namespace Infastrcuture
                 students.Attach(entity);
                 var entry = _studentDbContext.Entry(entity);
                 entry.Property(m => m.FlowerNum).IsModified = true;
+
                 entity.Subjects.Clear();
                 entity.Subjects = _subjectService.All().Where(m => subjectId.Contains(m.Id.ToString())).ToList();
                 _studentDbContext.SaveChanges();

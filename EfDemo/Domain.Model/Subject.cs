@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Domain.Model
 {
@@ -22,10 +23,11 @@ namespace Domain.Model
         /// <summary>
         /// 设置或获取成绩
         /// </summary>
-        public virtual ICollection<Grade> Grades { set; get; }
+        public virtual ICollection<Grade> Grades { set; get; }=new List<Grade>();
         /// <summary>
         /// 设置或获取学生
         /// </summary>
-        public virtual ICollection<Student> Students { set; get; }
+        [JsonIgnore]
+        public virtual ICollection<Student> Students { set; get; }=new List<Student>();
     }
 }
