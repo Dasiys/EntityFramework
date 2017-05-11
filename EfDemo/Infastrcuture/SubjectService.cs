@@ -21,9 +21,15 @@ namespace Infastrcuture
         /// 添加所有课程
         /// </summary>
         /// <returns></returns>
-        public IQueryable<Subject> All()
+        public IList<Subject> All()
+        {
+            return GetSubject().ToList();
+        }
+
+        private IQueryable<Subject> GetSubject()
         {
             return _studentDbContext.Set<Subject>();
+
         }
 
         /// <summary>

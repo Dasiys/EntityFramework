@@ -18,10 +18,10 @@ namespace Infastrcuture
             _studentDbContext = studentDbContext;
         }
 
-        public IQueryable<Grade> All()
-        {
-            return _studentDbContext.Set<Grade>().AsNoTracking();
-        }
+        //public IQueryable<Grade> All()
+        //{
+        //    return _studentDbContext.Set<Grade>().AsNoTracking();
+        //}
 
         public void AddGrade(Grade entity)
         {

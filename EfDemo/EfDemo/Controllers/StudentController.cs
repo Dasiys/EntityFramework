@@ -18,7 +18,7 @@ namespace EfDemo.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            var student = _studentService.GetStudent().ToList();
+            var student = _studentService.All();
             ViewBag.Subject = GetSubjects();
             return View(student);
         }
@@ -61,7 +61,7 @@ namespace EfDemo.Controllers
 
         public ActionResult Edit(int studentId)
         {
-            var student = _studentService.GetStudent().FirstOrDefault(m => m.Id == studentId);
+            var student = _studentService.All().FirstOrDefault(m => m.Id == studentId);
             ViewBag.Subject = _subjectService.All().ToList();
             return View(student);
         }

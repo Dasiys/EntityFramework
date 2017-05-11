@@ -16,9 +16,9 @@ namespace EfDemo.Controllers
         private readonly GradeService _gradeService=new GradeService(StudentDbContext);
         public ActionResult Index()
         {
-            var student = _studentService.GetStudent().ToList();
+            var student = _studentService.All();
             ViewBag.Student = student;
-            ViewBag.Subject = _subjectService.All().ToList();
+            ViewBag.Subject = _subjectService.All();
             return View();
         }
 

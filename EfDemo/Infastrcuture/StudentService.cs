@@ -19,18 +19,29 @@ namespace Infastrcuture
             _subjectService = new SubjectService(_studentDbContext);
         }
 
-        public IQueryable<Student> Fetch(Expression<Func<Student, bool>> param)
+        public IList<Student> Fetch(Expression<Func<Student, bool>> param)
+        {
+            return Query(param).ToList();
+        }
+
+        private IQueryable<Student> Query(Expression<Func<Student, bool>> param)
         {
             return GetStudent().Where(param);
+
         }
 
         /// <summary>
         /// 设置或获取学生
         /// </summary>
         /// <returns></returns>
-        public IQueryable<Student> GetStudent()
+        private IQueryable<Student> GetStudent()
         {
             return _studentDbContext.Set<Student>().Include(m => m.Subjects).AsNoTracking();
+        }
+
+        public IList<Student> All()
+        {
+            return GetStudent().ToList();
         }
 
         public void EditStudent(Student entity)
@@ -47,10 +58,10 @@ namespace Infastrcuture
         /// <param name="orderBy"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public IQueryable<Student> GetPage<TKey>(int pagesize, Expression<Func<Student, TKey>> orderBy,
+        public List<Student> GetPage<TKey>(int pagesize, Expression<Func<Student, TKey>> orderBy,
             Expression<Func<Student, bool>> param)
         {
-            return Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
+            return Query(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2).ToList();
         }
 
         public void EditStudentSubject(int studentId, List<string> subjectId)
