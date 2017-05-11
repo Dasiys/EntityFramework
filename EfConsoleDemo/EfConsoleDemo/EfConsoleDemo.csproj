@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201705110754438_AddUser.Designer.cs">
       <DependentUpon>201705110754438_AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705110809482_changeLength.cs" />
+    <Compile Include="Migrations\201705110809482_changeLength.Designer.cs">
+      <DependentUpon>201705110809482_changeLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705110754438_AddUser.resx">
       <DependentUpon>201705110754438_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705110809482_changeLength.resx">
+      <DependentUpon>201705110809482_changeLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
