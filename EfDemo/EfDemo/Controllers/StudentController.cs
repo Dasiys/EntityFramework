@@ -6,11 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using Antlr.Runtime.Misc;
 using Newtonsoft.Json;
 
 namespace EfDemo.Controllers
 {
-    public class StudentController : Controller
+    public class StudentController : BaseController
     {
 
         private readonly StudentService _studentService = new StudentService(new StudentDbContext());
@@ -67,10 +68,13 @@ namespace EfDemo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int Id, List<string> subjectId )
+        public ActionResult Edit(int Id, List<string> subjectId)
         {
-            _studentService.EditStudentSubject(Id,subjectId);
-            return RedirectToAction("Index", "Student");
+            return base.TryScope(() =>
+            {
+                _studentService.EditStudentSubject(Id, subjectId);
+                return RedirectToAction("Index", "Student");
+            });
         }
     }
 }
