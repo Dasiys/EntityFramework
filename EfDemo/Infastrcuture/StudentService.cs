@@ -47,10 +47,10 @@ namespace Infastrcuture
         /// <param name="orderBy"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public IQueryable<Student> GetPage(int pagesize, Expression<Func<Student, int>> orderBy,
+        public IQueryable<Student> GetPage<TKey>(int pagesize, Expression<Func<Student,TKey>> orderBy,
             Expression<Func<Student, bool>> param)
         {
-            return this.Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
+            return Fetch(param).OrderBy(orderBy).Skip((pagesize - 1) * 2).Take(2);
         }
 
         public void EditStudentSubject(int studentId, List<string> subjectId)
