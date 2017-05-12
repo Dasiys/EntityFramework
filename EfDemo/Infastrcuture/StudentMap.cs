@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace Infastrcuture
     {
         public StudentMap()
         {
-            HasKey(m => m.Id);
+            
+            HasKey(m => m.Id).HasIndex("Student_Id",IndexOptions.Unique,e=>e.Property(x=>x.Id));
             HasMany(m => m.Subjects)
                 .WithMany(n => n.Students)
                 .Map(

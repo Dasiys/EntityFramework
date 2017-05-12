@@ -81,3 +81,4 @@ F:\project\EfDemo\EfDemo\EfDemo\bin\zh-Hans\System.Web.WebPages.Razor.resources.
 F:\project\EfDemo\EfDemo\EfDemo\obj\Debug\EfDemo.csprojResolveAssemblyReference.cache
 F:\project\EfDemo\EfDemo\EfDemo\obj\Debug\EfDemo.dll
 F:\project\EfDemo\EfDemo\EfDemo\obj\Debug\EfDemo.pdb
+F:\project\EfDemo\EfDemo\EfDemo\bin\EntityFramework.IndexingExtensions.dll

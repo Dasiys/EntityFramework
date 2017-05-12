@@ -7,13 +7,13 @@ namespace EfConsoleDemo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddUser : IMigrationMetadata
+    public sealed partial class Tph : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Tph));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705110754438_AddUser"; }
+            get { return "201705110926324_Tph"; }
         }
         
         string IMigrationMetadata.Source

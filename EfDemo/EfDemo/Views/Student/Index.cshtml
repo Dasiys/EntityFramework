@@ -63,7 +63,6 @@
                         if (data.length > 0) {
                             $.each(data,
                                 function (index, value) {
-                                    console.log(value);
                                     var name = "";
                                     $.each(value.Subjects,
                                         function (i, v) {
@@ -81,7 +80,6 @@
                         } else {
                             htmlStr += "<tr><td colspan='5'>还未录入任何学生</td></tr>";
                         }
-                        console.log(htmlStr);
                         $("tbody").children().remove();
                         $("tbody").append(htmlStr);
                     });

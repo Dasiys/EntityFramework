@@ -12,6 +12,10 @@ namespace EfConsoleDemo
         public UserMap()
         {
             HasKey(m => m.Id);
+            Map<User>(pp => pp.Requires("Type").HasValue(0));
+            Map<Student>(pp => pp.Requires("Type").HasValue(1));
+            Map<Adult>(pp => pp.Requires("Type").HasValue(2));
         }
+
     }
 }

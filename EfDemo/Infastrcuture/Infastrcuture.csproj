@@ -33,6 +33,9 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.IndexingExtensions, Version=1.0.1.26117, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.IndexingExtensions.1.0.1\lib\net40\EntityFramework.IndexingExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -52,6 +55,10 @@
     <Compile Include="Migrations\201705100759101_InitialCreates.cs" />
     <Compile Include="Migrations\201705100759101_InitialCreates.Designer.cs">
       <DependentUpon>201705100759101_InitialCreates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705110910148_IndexAdd.cs" />
+    <Compile Include="Migrations\201705110910148_IndexAdd.Designer.cs">
+      <DependentUpon>201705110910148_IndexAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentDbContext.cs" />
@@ -74,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705100759101_InitialCreates.resx">
       <DependentUpon>201705100759101_InitialCreates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705110910148_IndexAdd.resx">
+      <DependentUpon>201705110910148_IndexAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

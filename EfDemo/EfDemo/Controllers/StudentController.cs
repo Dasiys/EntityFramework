@@ -57,7 +57,7 @@ namespace EfDemo.Controllers
         {
             if (ModelState.IsValid)
                 _studentService.AddStudent(entity);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Student");
         }
 
         public ActionResult Edit(int studentId)
