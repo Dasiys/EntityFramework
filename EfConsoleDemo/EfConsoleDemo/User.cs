@@ -10,7 +10,10 @@ namespace EfConsoleDemo
     public class User
     {
         public int Id { set; get; }
-        [StringLength(7)]
         public string Name { set; get; }
+        /// <summary>
+        /// 设置或获取并发
+        /// </summary>
+        public byte[] RowStamp { set; get; }
     }
 }

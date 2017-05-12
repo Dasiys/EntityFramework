@@ -29,7 +29,7 @@
                     <td>@student.Name</td>
                     <td>@student.FlowerNum</td>
                     <td>
-                        @string.Join(",", student.Subjects?.Select(m => m.Name))
+                        @string.Join(",",  student.Subjects?.Select(m => m.Name))
                     </td>
                     <td>@Html.ActionLink("编辑", "Edit", "Student", new { studentId = student.Id }, new { })</td>
                 </tr>

@@ -55,6 +55,14 @@
     <Compile Include="Migrations\201705110926324_Tph.Designer.cs">
       <DependentUpon>201705110926324_Tph.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705120541596_AddRowVersion.cs" />
+    <Compile Include="Migrations\201705120541596_AddRowVersion.Designer.cs">
+      <DependentUpon>201705120541596_AddRowVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705120657557_editFluent.cs" />
+    <Compile Include="Migrations\201705120657557_editFluent.Designer.cs">
+      <DependentUpon>201705120657557_editFluent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +78,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705110926324_Tph.resx">
       <DependentUpon>201705110926324_Tph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705120541596_AddRowVersion.resx">
+      <DependentUpon>201705120541596_AddRowVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705120657557_editFluent.resx">
+      <DependentUpon>201705120657557_editFluent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

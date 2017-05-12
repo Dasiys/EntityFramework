@@ -15,6 +15,7 @@ namespace EfConsoleDemo
             Map<User>(pp => pp.Requires("Type").HasValue(0));
             Map<Student>(pp => pp.Requires("Type").HasValue(1));
             Map<Adult>(pp => pp.Requires("Type").HasValue(2));
+            Property(m => m.RowStamp).IsRowVersion();
         }
 
     }
