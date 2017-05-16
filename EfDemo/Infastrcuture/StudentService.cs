@@ -72,7 +72,6 @@ namespace Infastrcuture
             var entity = students.FirstOrDefault(m => m.Id == studentId);
             if (entity != null)
             {
-                students.Attach(entity);
                 entity.Subjects.Clear();
                 if (subjectId?.Any()==true)
                     entity.Subjects = _subjectService.All().Where(m => subjectId.Contains(m.Id.ToString())).ToList();
